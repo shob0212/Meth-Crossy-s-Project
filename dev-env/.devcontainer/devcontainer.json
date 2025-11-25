@@ -1,0 +1,37 @@
+{
+  "name": "TripLink DevContainer",
+  "dockerFile": "Dockerfile",
+  "context": "..",
+  "mounts": [
+    "source=${localWorkspaceFolder}/../triplink,target=/workspace,type=bind,consistency=cached"
+  ],
+  "remoteUser": "node",
+  "postCreateCommand": "pnpm install && pnpm add -D -w @biomejs/biome@2.3.5 && pnpm add -D -w turbo@2.6.1 && pnpm add -D -w typescript@5.9.3 && pnpm add -g wrangler",
+  
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "editor.formatOnSave": true,
+        "biome.enable": true,
+        "biome.format.enable": true,
+        "biome.lint.enable": true,
+        "biome.experimental.useServer": true
+      },
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "seatonjiang.gitmoji-vscode",
+        "eamodio.gitlens",
+        "ms-vsliveshare.vsliveshare",
+        "oderwat.indent-rainbow",
+        "streetsidesoftware.code-spell-checker",
+        "visualstudioexptteam.vscodeint",
+        "mhutchie.git-graph",
+        "biomejs.biome"
+      ]
+    }
+  },
+
+  "forwardPorts": [3000, 8787],
+  "workspaceFolder": "/workspace"
+}
