@@ -6,7 +6,7 @@
     "source=${localWorkspaceFolder}/../triplink,target=/workspace,type=bind,consistency=cached"
   ],
   "remoteUser": "node",
-  "postCreateCommand": "pnpm install && pnpm add -D -w @biomejs/biome@2.3.5 && pnpm add -D -w turbo@2.6.1 && pnpm add -D -w typescript@5.9.3 && pnpm add -g wrangler",
+  "postCreateCommand": "pnpm install && pnpm add -D -w @biomejs/biome@2.3.5 && pnpm add -D -w turbo@2.6.1 && pnpm add -D -w typescript@5.9.3 && pnpm add -D wrangler",
   
   "customizations": {
     "vscode": {
